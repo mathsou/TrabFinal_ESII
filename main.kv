@@ -1,0 +1,308 @@
+<Tela>:
+    NovoServico:
+        name: 'novoservico'
+        id: novoservico
+    ConfirmarServico:
+        name: 'confirmarservico'
+        id: confirmarservico
+    Sucesso:
+        name: 'sucesso'
+        id: sucesso
+
+<NovoServico>:
+    FloatLayout:
+        orientation: 'vertical'
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            font_color: 0, 0, 0, 0
+            text: 'NOVO SERVICO'
+            size_hint: (None, None) 
+            x: 350
+            y: 500
+            color: 0, 0, 0, 1
+        Button:
+            text:'voltar'
+            size_hint: (None, None)
+            size: 40, 40
+            x: 750
+            y: 550
+            font_size: 14
+        
+        Label:
+            color: 0, 0, 0, 1
+            text: 'FRASE:'
+            size_hint: (None, None) 
+            x: 30
+            y: 450
+        TextInput:
+            id: frase1
+            size_hint: (None, None) 
+            size: 400, 30
+            x: 150
+            y: 490
+        Label:
+            color: 0, 0, 0, 1
+            text: 'ALTURA:'
+            size_hint: (None, None) 
+            x: 30
+            y: 400
+        TextInput:
+            id: altura1
+            size_hint: (None, None) 
+            size: 400, 30
+            x: 150
+            y: 440
+        Label:
+            color: 0, 0, 0, 1
+            text: 'LARGURA:'
+            size_hint: (None, None) 
+            x: 30
+            y: 350
+        TextInput:
+            id: largura1
+            size_hint: (None, None) 
+            size: 400, 30
+            x: 150
+            y: 390
+        Label:
+            color: 0, 0, 0, 1
+            text: 'COR (PLACA):'
+            size_hint: (None, None) 
+            x: 40
+            y: 300
+        TextInput:
+            id: corplaca1
+            size_hint: (None, None) 
+            size: 400, 30
+            x: 150
+            y: 340
+        Label:
+            color: 0, 0, 0, 1
+            text: 'COR (LETRAS):'
+            size_hint: (None, None) 
+            x: 45
+            y: 250
+        TextInput:
+            id: corletras1
+            size_hint: (None, None) 
+            size: 400, 30
+            x: 150
+            y: 290
+        Label:
+            id: erro
+            text: ''
+            font_size: 12
+            size_hint: (None, None)
+            x: 300
+            y: 230
+            color: 1, 0, 0, 1
+        Button:
+            text: 'Limpar'
+            size_hint: (None, None) 
+            size: 80, 30
+            x: 200
+            y: 200
+            on_release: root.limpar()
+        Button:
+            text: 'Enviar'
+            size_hint: (None, None) 
+            size: 80, 30
+            x: 400
+            y: 200
+            on_release: root.load_placa()
+    
+
+
+
+<ConfirmarServico>:
+    FloatLayout:
+        orientation: 'vertical'
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            color: 0, 0, 0, 1
+            text: 'CONFIRMAR SERVICO'
+            size_hint: (None, None) 
+            x: 350
+            y: 500
+        Button:
+            text:'voltar'
+            size_hint: (None, None) 
+            size: 40, 40
+            x: 750
+            y: 550
+            font_size: 14
+            on_release: root.manager.current = 'novoservico'
+        Label:
+            color: 0, 0, 0, 1
+            text: 'NOME:'
+            size_hint: (None, None) 
+            x: 30
+            y: 450
+        TextInput:
+            text:'CLIENTE'
+            size_hint: (None, None) 
+            size: 400, 30
+            x: 160
+            y: 490
+        Label:
+            color: 0, 0, 0, 1
+            text: 'TELEFONE:'
+            size_hint: (None, None) 
+            x: 42
+            y: 400
+        TextInput:
+            text: '(00) 00000-0000'
+            size_hint: (None, None) 
+            size: 400, 30
+            x: 160
+            y: 440
+        Label:
+            color: 0, 0, 0, 1
+            text: 'FRASE: '
+            size_hint: (None, None) 
+            x: 32
+            y: 350
+        TextInput:
+            id: frase2
+            size_hint: (None, None) 
+            size: 400, 30
+            x: 160
+            y: 390
+        Label:
+            color: 0, 0, 0, 1
+            text: 'ALTURA:'
+            size_hint: (None, None) 
+            x: 32
+            y: 300
+        TextInput:
+            id: altura2
+            size_hint: (None, None) 
+            size: 400, 30
+            x: 160
+            y: 340
+        Label:
+            color: 0, 0, 0, 1
+            text: 'LARGURA:'
+            size_hint: (None, None) 
+            x: 37
+            y: 250
+        TextInput:
+            id: largura2
+            size_hint: (None, None) 
+            size: 400, 30
+            x: 160
+            y: 290
+        Label:
+            color: 0, 0, 0, 1
+            text: 'COR (PLACA):'
+            size_hint: (None, None) 
+            x: 50
+            y: 200
+        TextInput:
+            id: corplaca2
+            size_hint: (None, None) 
+            size: 400, 30
+            x: 160
+            y: 240
+        Label:
+            color: 0, 0, 0, 1
+            text: 'COR (LETRAS):'
+            size_hint: (None, None) 
+            x: 54
+            y: 150
+        TextInput:
+            id: corletras2
+            size_hint: (None, None) 
+            size: 400, 30
+            x: 160
+            y: 190
+
+
+
+
+
+        Label:
+            color: 0, 0, 0, 1
+            text: 'Valor Total:'
+            size_hint: (None, None) 
+            x: 45
+            y: 100
+        TextInput:
+            id: valortotal
+            size_hint: (None, None) 
+            size: 400, 30
+            x: 160
+            y: 140
+        Label:
+            color: 0, 0, 0, 1
+            text: 'Valor Sinal:'
+            size_hint: (None, None) 
+            x: 45
+            y: 50
+        TextInput:
+            id: valorsinal
+            size_hint: (None, None) 
+            size: 400, 30
+            x: 160
+            y: 90
+        Label:
+            color: 0, 0, 0, 1
+            text: 'Data Entrega'
+            size_hint: (None, None) 
+            x: 50
+            y: 0
+        TextInput:
+            id: dataentrega
+            size_hint: (None, None) 
+            size: 400, 30
+            x: 160
+            y: 40
+        Button:
+            text: 'Cancelar'
+            size_hint: (None, None) 
+            size: 80, 30
+            x: 200
+            y: 5
+            on_release: root.cancelar()
+
+        Button:
+            text: 'Confirmar'
+            size_hint: (None, None) 
+            size: 80, 30
+            x: 400
+            y: 5
+            on_release: root.manager.current = 'sucesso'
+            
+<Sucesso>:
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Button:
+            text:'voltar'
+            size_hint: (None, None) 
+            size: 40, 40
+            x: 750
+            y: 550
+            font_size: 14
+            on_release: root.voltar()
+        Label:
+            text: 'ENCOMENDA CONCLUIDA COM SUCESSO'
+            color: 0, 0, 0, 1
+
+
+
+    

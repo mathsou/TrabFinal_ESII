@@ -67,6 +67,7 @@ class ConfirmarServico(Screen):
         self.manager.ids.novoservico.ids.largura1.text = ''
         self.manager.ids.novoservico.ids.corplaca1.text = ''
         self.manager.ids.novoservico.ids.corletras1.text = ''
+        self.manager.ids.novoservico.ids.erro.text = ''
         self.manager.current = 'novoservico'
 
 class Sucesso(Screen):
@@ -76,6 +77,7 @@ class Sucesso(Screen):
         self.manager.ids.novoservico.ids.largura1.text = ''
         self.manager.ids.novoservico.ids.corplaca1.text = ''
         self.manager.ids.novoservico.ids.corletras1.text = ''
+        self.manager.ids.novoservico.ids.erro.text = ''
         self.manager.current = 'novoservico'
 
 class Main(App):
